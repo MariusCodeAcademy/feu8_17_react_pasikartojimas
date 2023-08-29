@@ -5,11 +5,13 @@ export default function Counter() {
 
   return (
     <div>
-      <h2>Counter</h2>
-      <p className='counterVal'>0</p>
-      <div>
-        <button>Up</button>
-        <button>Down</button>
+      <div className='card'>
+        <h2>Counter</h2>
+        <p className='counterVal'>0</p>
+        <div>
+          <button>Up</button>
+          <button>Down</button>
+        </div>
       </div>
       <hr />
       <button>Show control</button>
