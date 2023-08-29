@@ -13,18 +13,6 @@ export default function App() {
   return (
     <div className='container'>
       <h1>Pasikartojimas</h1>
-      <div className='counters'>
-        {/* generuoti counterius is counterArr */}
-        {counterArr.map((counterObj) => (
-          <Counter
-            key={counterObj.id}
-            name={counterObj.name}
-            starting={counterObj.starting}
-          />
-        ))}
-      </div>
-
-      {/* name should be Counter */}
       <CounterList items={counterArr} />
     </div>
   );
