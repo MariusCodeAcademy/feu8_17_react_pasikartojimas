@@ -14,7 +14,7 @@ export default function App() {
       <h1>Pasikartojimas</h1>
       <div className='counters'>{/* generuoti counterius is counterArr */}</div>
       <Counter name='Push ups' />
-      <Counter name='Km ran' starting={0} />
+      <Counter name='Km ran' starting={10} />
       {/* name should be Counter */}
       <Counter />
     </div>
