@@ -6,7 +6,8 @@ export default function Counter(props) {
   const startFrom = props.starting ? props.starting : 0;
   const [counterVal, setCounterVal] = useState(startFrom);
   // state for input
-  const [counterName, setCounterName] = useState(props.name);
+  const initName = props.name || 'Counter';
+  const [counterName, setCounterName] = useState(initName);
   // state for control
   const [isControlOn, setIsControlOn] = useState(false);
 
