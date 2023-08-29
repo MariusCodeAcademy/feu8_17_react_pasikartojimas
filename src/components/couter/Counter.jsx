@@ -1,9 +1,12 @@
 import { useState } from 'react';
 
-export default function Counter() {
-  const [counterVal, setCounterVal] = useState(0);
+export default function Counter(props) {
+  console.log('props ===', props);
+  console.log('props.starting ===', props.starting);
+  const startFrom = props.starting ? props.starting : 0;
+  const [counterVal, setCounterVal] = useState(startFrom);
   // state for input
-  const [counterName, setCounterName] = useState('Counter');
+  const [counterName, setCounterName] = useState(props.name);
   // state for control
   const [isControlOn, setIsControlOn] = useState(false);
 
