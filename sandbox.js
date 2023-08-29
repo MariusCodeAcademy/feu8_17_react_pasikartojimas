@@ -10,3 +10,8 @@ function setCounterVal(naujaReikme) {
 setCounterVal(counterVal + 1);
 
 console.log('counterVal ===', counterVal);
+
+// { id: 1, name: 'Birds' }, // counterObj
+
+const counterObj = { id: 1, name: 'Birds' };
+counterObj.id;
