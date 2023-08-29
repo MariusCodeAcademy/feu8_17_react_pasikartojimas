@@ -36,6 +36,7 @@ export default function BooksList() {
     <div>
       <h2>BooksList</h2>
       <ul>
+        {/* generuoti li elementus su knygos informacija */}
         <li>
           <h3>title</h3>
           <p>date</p>
