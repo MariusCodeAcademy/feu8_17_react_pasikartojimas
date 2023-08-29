@@ -1,5 +1,5 @@
 import './App.css';
-import Counter from './components/couter/Counter';
+import BooksList from './components/books/BooksList';
 import CounterList from './components/couter/CounterList';
 
 const counterArr = [
@@ -13,7 +13,8 @@ export default function App() {
   return (
     <div className='container'>
       <h1>Pasikartojimas</h1>
-      <CounterList items={counterArr} />
+      {false && <CounterList items={counterArr} />}
+      <BooksList />
     </div>
   );
 }
