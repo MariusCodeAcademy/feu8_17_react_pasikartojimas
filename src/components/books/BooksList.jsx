@@ -37,6 +37,7 @@ export default function BooksList() {
       <h2>BooksList</h2>
       <ul>
         {/* generuoti li elementus su knygos informacija */}
+        {/* generuoti <SingleBook /> paduodant informacija per props  */}
         <li>
           <h3>title</h3>
           <p>date</p>
