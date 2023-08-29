@@ -16,6 +16,21 @@ export default function Counter() {
     setCounterVal(counterVal - 1);
   }
 
+  function showControl() {
+    setIsControlOn(true);
+  }
+
+  function hideControl() {
+    setIsControlOn(false);
+  }
+  /**
+   *
+   * @param {InputEvent} event
+   */
+  function inputCounterName(event) {
+    setCounterName(event.target.value);
+  }
+
   return (
     <div>
       <div className='card'>
@@ -28,13 +43,22 @@ export default function Counter() {
       </div>
       <hr />
       {/* hide this button if control is on */}
-      <button>Show control</button>
+      {isControlOn === false && (
+        <button onClick={showControl}>Show control</button>
+      )}
       {/* show this block only after button above was clicked */}
-      <div className='counterTitleBlock'>
-        {/* double bind this input with a state */}
-        <input type='text' placeholder='set counter Title' />
-        <button>hide control</button>
-      </div>
+      {isControlOn === true && (
+        <div className='counterTitleBlock'>
+          {/* double bind this input with a state */}
+          <input
+            onChange={inputCounterName}
+            value={counterName}
+            type='text'
+            placeholder='set counter Title'
+          />
+          <button onClick={hideControl}>hide control</button>
+        </div>
+      )}
     </div>
   );
 }

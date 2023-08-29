@@ -6,7 +6,7 @@ export default function App() {
     <div className='container'>
       <h1>Pasikartojimas</h1>
       <Counter name='Push ups' />
-      <Counter name='Km ran' starting={5} />
+      {/* <Counter name='Km ran' starting={5} /> */}
     </div>
   );
 }
