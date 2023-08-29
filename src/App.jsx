@@ -1,5 +1,6 @@
 import './App.css';
 import Counter from './components/couter/Counter';
+import CounterList from './components/couter/CounterList';
 
 const counterArr = [
   { id: 1, name: 'Birds' },
@@ -16,7 +17,7 @@ export default function App() {
       <Counter name='Push ups' />
       <Counter name='Km ran' starting={10} />
       {/* name should be Counter */}
-      <Counter />
+      <CounterList />
     </div>
   );
 }
