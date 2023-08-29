@@ -3,7 +3,9 @@ import { useState } from 'react';
 export default function Counter() {
   const [counterVal, setCounterVal] = useState(0);
   // state for input
+  const [counterName, setCounterName] = useState('Counter');
   // state for control
+  const [isControlOn, setIsControlOn] = useState(false);
 
   function goUp() {
     console.log('goUp');
@@ -17,7 +19,7 @@ export default function Counter() {
   return (
     <div>
       <div className='card'>
-        <h2>Counter</h2>
+        <h2>{counterName}</h2>
         <p className='counterVal'>{counterVal}</p>
         <div>
           <button onClick={goUp}>Up</button>
