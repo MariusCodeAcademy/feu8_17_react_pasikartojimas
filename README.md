@@ -1,5 +1,7 @@
 # praktika
 
+## CartoosList
+
 1. Atvaizduoti duomenis komponente
 2. atvaizduoti list ir single atskiruose komponentuose
 3. mygtuko paspaudimu isrikiuoti pagal metus
@@ -43,3 +45,17 @@ const cartoons = [
   },
 ];
 ```
+
+## API users
+
+ApiUsers.jsx komponente parsiusti ir atvaizduoti vartotojus is
+https://jsonplaceholder.typicode.com/users
+
+1. susikurti vartotojams state pradine reiksme tuscias masyvas.
+2. tik uzsikrovus komponentui parsiusti duomenis (useEffect) ir issaugoti state
+3. sukti cikla ir generuoti vartotoju korteles. Korteles atvaizduoti sia info
+   ![](assets/2023-08-29-13-08-50.png)
+
+4. adresa atvaizduoti atskiru komponentu kuris gauna info per props
+5. kompanija atvaizduoti atskiru komponentu kuris gauna info per props
+6. graziai stilizuojam su css
