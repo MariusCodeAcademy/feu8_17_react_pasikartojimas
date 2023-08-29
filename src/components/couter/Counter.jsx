@@ -11,6 +11,13 @@ export default function Counter() {
         <button>Up</button>
         <button>Down</button>
       </div>
+      <hr />
+      <button>Show control</button>
+      {/* show this block only after button above was clicked */}
+      <div className='counterTitleBlock'>
+        <input type='text' placeholder='set counter Title' />
+        <button>hide control</button>
+      </div>
     </div>
   );
 }
