@@ -43,14 +43,20 @@ export default function BooksList() {
       <ul>
         {/* generuoti li elementus su knygos informacija */}
         {/* generuoti <SingleBook /> paduodant informacija per props  */}
+        {/* knygos onSale turi buti pink */}
         {booksArr.map((bObj) => (
-          <li key={bObj.id}>
+          <li
+            key={bObj.id}
+            className={`card ${bObj.isOnSale === true ? 'bookIsOnSale' : ''}`}
+          >
             <h3>{bObj.title}</h3>
-            <p>date</p>
+            <p>Released in: {bObj.year}</p>
             <p>
-              <i>autorius</i>
+              by
+              <strong> {bObj.author}</strong>
             </p>
-            <p className='sale'>On Sale Now</p>
+            {/* sita el mes norim rodyti tik kai bObj yra isOnSale lygu true */}
+            {bObj.isOnSale === true && <p className='sale'>On Sale Now</p>}
           </li>
         ))}
       </ul>

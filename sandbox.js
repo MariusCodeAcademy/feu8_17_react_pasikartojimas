@@ -15,3 +15,7 @@ console.log('counterVal ===', counterVal);
 
 const counterObj = { id: 1, name: 'Birds' };
 counterObj.id;
+
+bObj.isOnSale === true;
+true === true;
+true;
