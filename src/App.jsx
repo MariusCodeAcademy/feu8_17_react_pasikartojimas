@@ -16,7 +16,7 @@ export default function App() {
       <h1>Pasikartojimas</h1>
       {false && <CounterList items={counterArr} />}
       <BooksList />
-      <MoviesList />
+      {false && <MoviesList />}
     </div>
   );
 }
