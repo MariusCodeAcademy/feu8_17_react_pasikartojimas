@@ -15,6 +15,7 @@ export default function Counter() {
       <button>Show control</button>
       {/* show this block only after button above was clicked */}
       <div className='counterTitleBlock'>
+        {/* double bind this input with a state */}
         <input type='text' placeholder='set counter Title' />
         <button>hide control</button>
       </div>
