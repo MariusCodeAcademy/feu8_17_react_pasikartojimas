@@ -32,9 +32,15 @@ const movies = [
 ];
 
 export default function MoviesList() {
+  // reikalingas state, filtrui
   return (
     <div>
       <h2>MoviesList</h2>
+      <fieldset>
+        <legend>Filters</legend>
+        <button>Expensive movies</button>
+        <p>Active Filter: </p>
+      </fieldset>
       <ul>
         <li>visa filmo infomacija atitinkamuose taguose</li>
       </ul>

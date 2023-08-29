@@ -1,6 +1,7 @@
 import './App.css';
 import BooksList from './components/books/BooksList';
 import CounterList from './components/couter/CounterList';
+import MoviesList from './components/movies/MoviesList';
 
 const counterArr = [
   { id: 1, name: 'Birds' }, // counterObj
@@ -15,6 +16,7 @@ export default function App() {
       <h1>Pasikartojimas</h1>
       {false && <CounterList items={counterArr} />}
       <BooksList />
+      <MoviesList />
     </div>
   );
 }
