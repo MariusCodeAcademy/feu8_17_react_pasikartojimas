@@ -3,7 +3,7 @@ export default function UserAddress(props) {
 
   const { street, suite, city, zipcode } = props.data;
   return (
-    <div className='card'>
+    <div className='card left'>
       <h4>UserAddress</h4>
       <p>street: {street}</p>
       <p>suite: {suite}</p>
