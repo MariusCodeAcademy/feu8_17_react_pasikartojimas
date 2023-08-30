@@ -1,13 +1,36 @@
-const url = 'https://jsonplaceholder.typicode.com/users';
+import { useEffect, useState } from 'react';
 
+const url = 'https://jsonplaceholder.typicode.com/users';
+let ciklas = 0;
 export default function ApiUsers() {
+  ciklas++;
+  console.log('ApiUsers pradzia');
+  const [usersArr, setUsersArr] = useState([]);
+
+  // useEffect(funkcija, priklausomybiu masyvas)
+  // atlikti kazkokius veiksmus po to kai componentas susigeneravo
+  // DOM tai darom tokia useEffecte useEffect(() => {}, []);
+  useEffect(() => {
+    console.log('Ivyko efektas');
+    fetch(url).then(() => {
+      setUsersArr([1, 2]);
+    });
+
+    setTimeout(() => {
+      setUsersArr([1, 2, 3, 4]);
+    }, 4200);
+  }, []);
+  console.log('ciklas ===', ciklas);
+  console.log('ApiUsers virs render');
+
   return (
     <div>
       <h2>ApiUsers</h2>
 
       <ul>
-        <li>user 1</li>
-        <li>user 2</li>
+        {usersArr.map((uObj) => (
+          <li key={uObj}>user 1</li>
+        ))}
       </ul>
     </div>
   );
