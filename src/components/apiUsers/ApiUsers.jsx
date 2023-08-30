@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
+import SingleUser from './SingleUser';
 
 const url = 'https://jsonplaceholder.typicode.com/users';
 
 export default function ApiUsers() {
   console.log('ApiUsers susigeneravo');
   const [usersArr, setUsersArr] = useState([]);
-  console.log(JSON.stringify(usersArr[0]));
+
   // useEffect(funkcija, priklausomybiu masyvas)
   // atlikti kazkokius veiksmus po to kai componentas susigeneravo
   // DOM tai darom tokia useEffecte useEffect(() => {}, []);
@@ -28,8 +29,7 @@ export default function ApiUsers() {
 
       <ul>
         {usersArr.map((uObj) => (
-          // <SingleUser />
-          <li key={uObj.id}>{uObj.name}</li>
+          <SingleUser key={uObj.id} name={uObj.name} email={uObj.email} />
         ))}
       </ul>
     </div>
