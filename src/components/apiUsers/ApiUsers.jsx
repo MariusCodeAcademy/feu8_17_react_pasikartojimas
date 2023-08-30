@@ -1,11 +1,37 @@
 import { useEffect, useState } from 'react';
 import SingleUser from './SingleUser';
 
-const url = 'https://jsonplaceholder.typicode.com/users';
+const url = 'https://jsonplaceholder.typicode.com/users'; // /id
 
 export default function ApiUsers() {
   console.log('ApiUsers susigeneravo');
   const [usersArr, setUsersArr] = useState([]);
+
+  function handleDelete(idToDelete) {
+    console.log('handleDelete', idToDelete);
+    // siusim delete fetch su id
+    console.log(url + '/' + idToDelete);
+    fetch(url + '/' + idToDelete, {
+      method: 'DELETE',
+    })
+      .then((resp) => {
+        console.log('resp ===', resp);
+        if (resp.status === 200) {
+          console.log('istrinta');
+          // istringi sita useri is usersArr
+          localDelete(idToDelete);
+        }
+      })
+      .catch((error) => {
+        console.warn('ivyko klaida:', error);
+      });
+    // jei gaunam sekminga atsakyma pasalinam ta objeta is usersArr
+    // jei gaunam klaida tai netrinam objekto
+  }
+  function localDelete(deleteId) {
+    const filtered = usersArr.filter((uObj) => uObj.id !== deleteId);
+    setUsersArr(filtered);
+  }
 
   // useEffect(funkcija, priklausomybiu masyvas)
   // atlikti kazkokius veiksmus po to kai componentas susigeneravo
@@ -34,6 +60,7 @@ export default function ApiUsers() {
             name={uObj.name}
             email={uObj.email}
             address={uObj.address}
+            onDelete={() => handleDelete(uObj.id)}
           />
         ))}
       </ul>
