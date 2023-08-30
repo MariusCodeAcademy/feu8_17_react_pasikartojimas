@@ -28,6 +28,7 @@ export default function ApiUsers() {
 
       <ul>
         {usersArr.map((uObj) => (
+          // <SingleUser />
           <li key={uObj.id}>{uObj.name}</li>
         ))}
       </ul>
