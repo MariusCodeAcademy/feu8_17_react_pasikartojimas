@@ -1,3 +1,5 @@
+import SingleBook from './SingleBook';
+
 const booksArr = [
   {
     id: 1,
@@ -45,19 +47,13 @@ export default function BooksList() {
         {/* generuoti <SingleBook /> paduodant informacija per props  */}
         {/* knygos onSale turi buti pink */}
         {booksArr.map((bObj) => (
-          <li
+          <SingleBook
             key={bObj.id}
-            className={`card ${bObj.isOnSale === true ? 'bookIsOnSale' : ''}`}
-          >
-            <h3>{bObj.title}</h3>
-            <p>Released in: {bObj.year}</p>
-            <p>
-              by
-              <strong> {bObj.author}</strong>
-            </p>
-            {/* sita el mes norim rodyti tik kai bObj yra isOnSale lygu true */}
-            {bObj.isOnSale === true && <p className='sale'>On Sale Now</p>}
-          </li>
+            title={bObj.title}
+            year={bObj.year}
+            author={bObj.author}
+            isOnSale={bObj.isOnSale}
+          />
         ))}
       </ul>
     </div>
