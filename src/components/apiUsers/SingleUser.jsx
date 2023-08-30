@@ -6,7 +6,7 @@ export default function SingleUser(props) {
     <li>
       <h3>{props.name}</h3>
       <p>email: {props.email}</p>
-      <UserAddress />
+      <UserAddress data={props.address} />
       <hr />
     </li>
   );

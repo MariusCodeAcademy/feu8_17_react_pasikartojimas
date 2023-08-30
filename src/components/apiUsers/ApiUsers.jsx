@@ -29,7 +29,12 @@ export default function ApiUsers() {
 
       <ul>
         {usersArr.map((uObj) => (
-          <SingleUser key={uObj.id} name={uObj.name} email={uObj.email} />
+          <SingleUser
+            key={uObj.id}
+            name={uObj.name}
+            email={uObj.email}
+            address={uObj.address}
+          />
         ))}
       </ul>
     </div>
