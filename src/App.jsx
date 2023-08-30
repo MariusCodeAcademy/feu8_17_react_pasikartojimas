@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import BooksList from './components/books/BooksList';
 import CounterList from './components/couter/CounterList';
@@ -11,12 +12,13 @@ const counterArr = [
 ];
 
 export default function App() {
+  const [activeComponent, setActiveComponent] = useState(3);
   return (
     <div className='container'>
       <h1>Pasikartojimas</h1>
-      {false && <CounterList items={counterArr} />}
-      <BooksList />
-      {false && <MoviesList />}
+      {activeComponent === 1 && <CounterList items={counterArr} />}
+      {activeComponent === 2 && <BooksList />}
+      {activeComponent === 3 && <MoviesList />}
     </div>
   );
 }
