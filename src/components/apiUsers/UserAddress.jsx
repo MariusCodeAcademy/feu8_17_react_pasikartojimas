@@ -1,5 +1,5 @@
 export default function UserAddress(props) {
-  console.log('props ===', props);
+  // console.log('props ===', props);
 
   const { street, suite, city, zipcode } = props.data;
   return (
