@@ -3,6 +3,7 @@ import './App.css';
 import BooksList from './components/books/BooksList';
 import CounterList from './components/couter/CounterList';
 import MoviesList from './components/movies/MoviesList';
+import ApiUsers from './components/apiUsers/ApiUsers';
 
 const counterArr = [
   { id: 1, name: 'Birds' }, // counterObj
@@ -12,13 +13,20 @@ const counterArr = [
 ];
 
 export default function App() {
-  const [activeComponent, setActiveComponent] = useState(3);
+  const [activeComponent, setActiveComponent] = useState(4);
   return (
     <div className='container'>
       <h1>Pasikartojimas</h1>
+      <fieldset>
+        <button onClick={() => setActiveComponent(1)}>Counters</button>
+        <button onClick={() => setActiveComponent(2)}>Books</button>
+        <button onClick={() => setActiveComponent(3)}>Movies</button>
+        <button onClick={() => setActiveComponent(4)}>ApiUsers</button>
+      </fieldset>
       {activeComponent === 1 && <CounterList items={counterArr} />}
       {activeComponent === 2 && <BooksList />}
       {activeComponent === 3 && <MoviesList />}
+      {activeComponent === 4 && <ApiUsers />}
     </div>
   );
 }
