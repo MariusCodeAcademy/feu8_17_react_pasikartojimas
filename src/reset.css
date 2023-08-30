@@ -73,6 +73,14 @@ button {
   display: flex;
 }
 
+.gap-20 {
+  gap: 20px;
+}
+
+.tomato {
+  color: tomato;
+}
+
 .between {
   justify-content: space-between;
   align-items: center;

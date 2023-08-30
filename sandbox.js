@@ -19,3 +19,12 @@ counterObj.id;
 bObj.isOnSale === true;
 true === true;
 true;
+
+// add id to movies
+const moviesWithId = movies.map((movieObj, idx) => {
+  return {
+    id: idx + 1,
+    ...movieObj,
+  };
+});
+console.log(JSON.stringify(moviesWithId, null, 2));
