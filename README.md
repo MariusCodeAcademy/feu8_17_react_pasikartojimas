@@ -1,61 +1,26 @@
 # praktika
 
-## CartoosList
+Naudosite nemokama api is https://dummyjson.com/docs
 
-1. Atvaizduoti duomenis komponente
-2. atvaizduoti list ir single atskiruose komponentuose
-3. mygtuko paspaudimu isrikiuoti pagal metus
+1. susikurti nauja projekta, prisideti routeri
+2. sukurti puslapiu komponentus Products, Users, Posts, Todos
+3. kiekviename puslapuje kurti to resurso saraso komponenta. pvz Products psl bus ProductsList, Users psl UsersList ir t.t.
+4. kiekvienas saraso komponentas generuota Vieneto komponeta (SingleProduct, SingleUser ir t.t.)
+5. sarasu "List" komponentuose
 
-```js
-const cartoons = [
-  {
-    id: 1,
-    title: 'SpongeBob SquarePants',
-    year: 1999,
-    director: 'Stephen Hillenburg',
-    wasExpensive: false,
-  },
-  {
-    id: 2,
-    title: 'Looney Tunes',
-    year: 1930,
-    director: 'Various',
-    wasExpensive: false,
-  },
-  {
-    id: 3,
-    title: 'Avatar: The Last Airbender',
-    year: 2005,
-    director: 'Michael Dante DiMartino, Bryan Konietzko',
-    wasExpensive: true,
-  },
-  {
-    id: 4,
-    title: 'Scooby-Doo, Where Are You!',
-    year: 1969,
-    director: 'Joe Ruby, Ken Spears',
-    wasExpensive: false,
-  },
-  {
-    id: 5,
-    title: 'Tom and Jerry',
-    year: 1940,
-    director: 'William Hanna, Joseph Barbera',
-    wasExpensive: false,
-  },
-];
-```
+   5.1. parisiunciam duomenis ir irasom i state. (ProductsList,UsersList ir t.t. )
 
-## API users
+   5.2. generuojam Vieneto "Single" komponentus su ju informacija (SingleProduct, SingleUser ir t.t.)
 
-ApiUsers.jsx komponente parsiusti ir atvaizduoti vartotojus is
-https://jsonplaceholder.typicode.com/users
+6. Vieneto "Single" komponentuose pridedam mygtuka delete
 
-1. susikurti vartotojams state pradine reiksme tuscias masyvas.
-2. tik uzsikrovus komponentui parsiusti duomenis (useEffect) ir issaugoti state
-3. sukti cikla ir generuoti vartotoju korteles. Korteles atvaizduoti sia info
-   ![](assets/2023-08-29-13-08-50.png)
+   6.1 delete funkcija aprasom "List" komponentuose (ProductsList,UsersList ir t.t. ) ir vygdom fetch ar axios delete veiksma.
 
-4. adresa atvaizduoti atskiru komponentu kuris gauna info per props
-5. kompanija atvaizduoti atskiru komponentu kuris gauna info per props
-6. graziai stilizuojam su css
+   6.2 sekemes atveju istrinam objekta lokaliai kad matytume pokyti sveteineje.
+
+## kievienas resursas turi dokumentacija
+
+paspauskite ant "show output" kad matyti kokiu formatu grys atsakymas
+taip pat pasikonsolinkite ka gavote pagal tai spreskite ka irasyti i state
+![](assets/2023-08-30-12-35-46.png)
+![](assets/2023-08-30-12-37-19.png)
