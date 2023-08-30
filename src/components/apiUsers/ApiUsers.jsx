@@ -1,27 +1,26 @@
 import { useEffect, useState } from 'react';
 
 const url = 'https://jsonplaceholder.typicode.com/users';
-let ciklas = 0;
-export default function ApiUsers() {
-  ciklas++;
-  console.log('ApiUsers pradzia');
-  const [usersArr, setUsersArr] = useState([]);
 
+export default function ApiUsers() {
+  console.log('ApiUsers susigeneravo');
+  const [usersArr, setUsersArr] = useState([]);
+  console.log(JSON.stringify(usersArr[0]));
   // useEffect(funkcija, priklausomybiu masyvas)
   // atlikti kazkokius veiksmus po to kai componentas susigeneravo
   // DOM tai darom tokia useEffecte useEffect(() => {}, []);
   useEffect(() => {
-    console.log('Ivyko efektas');
-    fetch(url).then(() => {
-      setUsersArr([1, 2]);
-    });
-
-    setTimeout(() => {
-      setUsersArr([1, 2, 3, 4]);
-    }, 4200);
+    // parisisiusti duomentis ir israsyt i usersArr
+    fetch(url)
+      .then((resp) => resp.json())
+      .then((dataInJs) => {
+        console.log('dataInJs ===', dataInJs);
+        setUsersArr(dataInJs);
+      })
+      .catch((error) => {
+        console.warn('ivyko klaida:', error);
+      });
   }, []);
-  console.log('ciklas ===', ciklas);
-  console.log('ApiUsers virs render');
 
   return (
     <div>
@@ -29,7 +28,7 @@ export default function ApiUsers() {
 
       <ul>
         {usersArr.map((uObj) => (
-          <li key={uObj}>user 1</li>
+          <li key={uObj.id}>{uObj.name}</li>
         ))}
       </ul>
     </div>
@@ -50,4 +49,29 @@ https://jsonplaceholder.typicode.com/users
 4. adresa atvaizduoti atskiru komponentu kuris gauna info per props
 5. kompanija atvaizduoti atskiru komponentu kuris gauna info per props
 6. graziai stilizuojam su css
+
+One user obj 
+
+
+const a = {
+  id: 1,
+  name: 'Leanne Graham',
+  username: 'Bret',
+  email: 'Sincere@april.biz',
+  address: {
+    street: 'Kulas Light',
+    suite: 'Apt. 556',
+    city: 'Gwenborough',
+    zipcode: '92998-3874',
+    geo: { lat: '-37.3159', lng: '81.1496' },
+  },
+  phone: '1-770-736-8031 x56442',
+  website: 'hildegard.org',
+  company: {
+    name: 'Romaguera-Crona',
+    catchPhrase: 'Multi-layered client-server neural-net',
+    bs: 'harness real-time e-markets',
+  },
+};
+
 */
