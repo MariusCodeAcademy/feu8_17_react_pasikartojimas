@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import SingleMovie from './SingleMovie';
+
 const movies = [
   {
     id: 1,
@@ -38,30 +41,38 @@ const movies = [
 
 export default function MoviesList() {
   // reikalingas state, filtrui
+  const [showOnlyExpensive, setShowOnlyExpensive] = useState(false);
+
+  function toggleExpensiveFilter() {
+    setShowOnlyExpensive(!showOnlyExpensive);
+  }
+
+  // jei showOnlyExpensive yra true, tai mapinti per filtruota versija
+  // jei false tai mapinti per visus
+
+  const filteredMovies = movies.filter((mObj) => mObj.wasExpensive === true);
+
+  const moviesToShow = showOnlyExpensive === true ? filteredMovies : movies;
+
   return (
     <div>
       <h2>MoviesList</h2>
       <fieldset>
         <legend>Filters</legend>
-        <button>Expensive movies</button>
-        <p>Active Filter: </p>
+        <button onClick={toggleExpensiveFilter}>
+          {showOnlyExpensive ? 'All' : 'Expensive'} movies
+        </button>
+        <p>Active Filter: {showOnlyExpensive ? 'expensive movies' : ''}</p>
       </fieldset>
       <ul>
-        {movies.map((movieObj) => (
-          <li key={movieObj.id}>
-            <h3>
-              {movieObj.title}{' '}
-              {movieObj.wasExpensive && (
-                <span className='tomato'>-- was expensive</span>
-              )}
-            </h3>
-            <div className='flex gap-20'>
-              <p>year {movieObj.year} </p>
-              <p>
-                Directed <strong> {movieObj.director}</strong>
-              </p>
-            </div>
-          </li>
+        {moviesToShow.map((movieObj) => (
+          <SingleMovie
+            key={movieObj.id}
+            title={movieObj.title}
+            year={movieObj.year}
+            director={movieObj.director}
+            wasExpensive={movieObj.wasExpensive}
+          />
         ))}
       </ul>
     </div>
